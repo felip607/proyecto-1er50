@@ -54,9 +54,9 @@ public class Caracter
            Character c,d,e;
       	   int i,prioridadCima,prioridadOper;
       	   LinkedList expPre = new LinkedList();
-           Pila aux = new Pila();
-           Pila med = new Pila();
-           Pila pre = new Pila();
+           Stack aux = new Stack();
+           Stack med = new Stack();
+           Stack pre = new Stack();
 	   String Expr = Clasica();
            for(i=0;i<Expr.length();i++)
                 aux.Poner(new Character(Expr.charAt(i)));

@@ -1,35 +1,34 @@
 
 package Logica;
 
-public class Regulador 
+public class valParen
 {
-    public String Scan(String Exp) throws Exception
-    {
+    public String Scan(String Exp) throws Exception {
         String x = limpiarEspacios(Exp);
-        if(okParentesis(x))
-            if(okOperadores(x))
+        if(okParentesis(x)) {
+            if (okOperadores(x)){
                 return x;
-            else
-                x="O";
-        else
-            x="P";
+        }else{
+                x = "O";}
+        }else{
+            x="P";}
         return x;
     }
     
     private String limpiarEspacios(String Exp)
     {
         String aux = "";
-        for(int i=0; i<Exp.length();i++)
-        {
-            if(Exp.charAt(i)!=' ')
+        for(int i=0; i<Exp.length();i++) {
+            if(Exp.charAt(i)!=' ') {
                 aux = aux + Exp.charAt(i);
+            }
         }
         return aux;
     }
     private boolean okParentesis(String Exp)
     {
         Object aux;
-        Pila p = new Pila();
+        Stack p = new Stack();
         for(int i=0; i<Exp.length();i++)
         {
             if(Exp.charAt(i)=='(')
@@ -46,45 +45,40 @@ public class Regulador
         return (p.vacia()==true);     
     }
     
-    private boolean okOperadores(String Exp1)
-    {
-       
+    private boolean okOperadores(String Exp1) {
+
         String Exp = limpiarParentesis(Exp1);
-        if(Operador(Exp.charAt(0))||(Operador(Exp.charAt(Exp.length()-1))))
+        if (Operador(Exp.charAt(0)) || (Operador(Exp.charAt(Exp.length() - 1)))){
             return false;
-        else
-        {
+        }else {
             boolean sw=true;
-            for(int i=1; i<Exp.length()-1;i++)
-            {
+            for(int i=1; i<Exp.length()-1;i++) {
                 if(Operador(Exp.charAt(i))&&(Operador(Exp.charAt(i+1))))
                     return false;
             }
             return sw;
         }
     }
-    private String limpiarParentesis(String Exp)
-    {
+    private String limpiarParentesis(String Exp) {
         String aux="";
-        for(int i=0; i<Exp.length();i++)
-        {
+        for(int i=0; i<Exp.length();i++) {
             if((Exp.charAt(i)!='(')&&(Exp.charAt(i)!=')'))
                 aux = aux + Exp.charAt(i);
         }
         return aux;
     }
     
-    private boolean Operador(char x)
-    {
+    private boolean Operador(char x){
           boolean sw = false;
-          switch(x)
-          {
-             case '+' : sw = true; break;
-             case '-' : sw = true; break;
-             case '*' : sw = true; break;
-             case '/' : sw = true; break;
-
-             
+          switch(x){
+             case '+' : sw = true;
+                break;
+             case '-' : sw = true;
+                break;
+             case '*' : sw = true;
+                break;
+             case '/' : sw = true;
+                break;
           }  
 	  return sw;
     }

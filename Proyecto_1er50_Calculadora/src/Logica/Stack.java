@@ -1,17 +1,17 @@
 
 package Logica;
 
-public class Pila {
+public class Stack {
 	private Object v[];
 	private int tope, max;
 
-	public Pila() {
+	public Stack() {
 		max = 100;
 		v = new Object[max];
 		tope = -1;
 	}
 
-	public Pila(int max) {
+	public Stack(int max) {
 		this.max = max;
 		v = new Object[max];
 		tope = -1;

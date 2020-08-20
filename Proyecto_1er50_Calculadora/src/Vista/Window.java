@@ -5,7 +5,7 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-import Logica.Calculadora;
+import Logica.calculator;
 import Logica.Caracter;
 
 import java.awt.event.ActionListener;
@@ -19,11 +19,11 @@ public class Window {
 	private JPanel contentPane,panel1,nums,ops;
 	private JTextArea textArea;
 	public JButton num0,num00,num1,num2,num3,num4,num5,num6,num7,num8,num9,p,sum,res,mul,div,igual,ac,p1,p2;
-	Calculadora cal;
+	calculator cal;
 	String numero1 = "";
 
 	public Window() {
-		cal = new Calculadora();
+		cal = new calculator();
 		frame = new JFrame();
 		textArea = new JTextArea();
 		initialize();

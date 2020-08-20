@@ -5,9 +5,6 @@
 
 package Vista;
 
-import Logica.Calculadora;
-import Logica.Caracter;
-
 public class Run {
 	
 	public static void main(String[] args) throws Exception {

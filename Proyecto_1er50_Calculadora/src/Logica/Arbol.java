@@ -16,20 +16,20 @@ public class Arbol
     public Arbol(LinkedList Exp)
     {
         Object aux =  Exp.get(0);
-        Valor a = new Valor();
+        Value a = new Value();
         a.setValor(aux.toString());
         if(operador(aux))     
             a.setOperador(true);
         else
             a.setOperador(false);
          Nodo op,q = new Nodo(a);
-            Pila p = new Pila();
+            Stack p = new Stack();
         boolean antesOperando = false;
         Raiz = q;
         for(int i=1;i<Exp.size(); i++ )
         {
             Object aux2 = Exp.get(i);
-            Valor b = new Valor(aux2.toString(),false);
+            Value b = new Value(aux2.toString(),false);
             if(operador(aux2))
                 b.setOperador(true);
             op = new Nodo(b);
@@ -66,18 +66,16 @@ public class Arbol
             this.Raiz = R;
     }
     
-    public Nodo getRaiz()
-    {
+    public Nodo getRaiz() {
         return this.Raiz;
     }
     
-    public int getNodos()
-    {
+    public int getNodos() {
         return n;
     }
     
     private boolean operador(Object c){
-        char operadores[] = {'+','-','*','/','^'};
+        char operadores[] = {'+','-','*','/'};
         boolean existe = false;
         char aux =   c.toString().charAt(0);
         for(int i=0; ((i<5) && (!existe)); i++)
@@ -86,33 +84,32 @@ public class Arbol
         return existe;
     }
     
-    public double Evaluar()
-    {
+    public double Evaluar(){
         return Evaluar(Raiz);
     }
     
-    private double Evaluar(Nodo R)
-    {
-       double res=0;
-       if(R==null)
-            return res=0;
-       else
-       {
+    private double Evaluar(Nodo R) {
+        double res = 0;
+        if (R == null){
+            return res = 0;
+        }else {
             if(Hoja(R)) // Operando
             {
                 String aux = R.getData().getValor();
                 res = Double.parseDouble(aux);
-            }else
-            {
+            }else {
               double vizq = Evaluar(R.getHI());
               double vder = Evaluar(R.getHD());
               Character op = R.getData().getValor().charAt(0);
-              switch(op)
-              {
-                 case '+' : res = vizq + vder;break;
-                 case '-' : res = vizq - vder;break;
-                 case '*' : res = vizq * vder;break;
-                 case '/' : res = vizq / vder;break;
+              switch(op){
+                 case '+' : res = vizq + vder;
+                    break;
+                 case '-' : res = vizq - vder;
+                    break;
+                 case '*' : res = vizq * vder;
+                    break;
+                 case '/' : res = vizq / vder;
+                    break;
                  default:; break;
               }
             }  

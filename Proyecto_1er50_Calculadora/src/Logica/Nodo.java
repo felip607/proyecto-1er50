@@ -4,16 +4,16 @@ package Logica;
 public class Nodo 
 {
     private Nodo HI;
-    private Valor Data;
+    private Value Data;
     private Nodo HD;
     
     public Nodo()
     {
-        Data = new Valor();
+        Data = new Value();
         HI = null;
         HD = null;
     }
-    public Nodo( Valor dat)
+    public Nodo( Value dat)
     {
         this.Data = dat;
         //this.Data.setValor(dat.getValor());
@@ -22,7 +22,7 @@ public class Nodo
         this.HD = null;
     }
     
-    public Nodo(Nodo Hisq, Valor dat, Nodo Hder)
+    public Nodo(Nodo Hisq, Value dat, Nodo Hder)
     {
         this.Data.setValor(dat.getValor());
         this.Data.setOperador(dat.getOperator());
@@ -30,7 +30,7 @@ public class Nodo
         this.HD = Hder;
     }
     
-    public void setData(Valor dat)
+    public void setData(Value dat)
     {
         this.Data.setValor(dat.getValor());
         this.Data.setOperador(dat.getOperator());
@@ -46,7 +46,7 @@ public class Nodo
         this.HD = Hder;
     }
     
-    public Valor getData()
+    public Value getData()
     {
         return this.Data;
     }

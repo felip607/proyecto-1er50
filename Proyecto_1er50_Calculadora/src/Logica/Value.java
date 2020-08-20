@@ -1,17 +1,17 @@
 
 package Logica;
 
-public class Valor {
+public class Value {
 	private String valor;
 	private boolean operador;
 
-	public Valor() {
+	public Value() {
 		operador = false;
 		valor = "";
 
 	}
 
-	public Valor(String va, boolean op) {
+	public Value(String va, boolean op) {
 		valor = va;
 		operador = op;
 	}

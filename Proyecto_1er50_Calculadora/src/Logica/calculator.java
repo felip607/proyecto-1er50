@@ -2,20 +2,20 @@ package Logica;
 
 import java.util.LinkedList;
 
-public class Calculadora {
-	public Calculadora() {
+public class calculator {
+	public calculator() {
 	}
 
 	public double calcular(String Expre) throws Exception {
 		double resultado = 0;
 		String aux = Expre;
-		Regulador scanner = new Regulador();
+		valParen scanner = new valParen();
 		aux = scanner.Scan(aux);
 		if (aux.equals("P") || aux.equals("O")) {
 			if (aux.equals("P"))
-				throw new Exception("Verificar los paréntesis. Gracias.");
+				throw new Exception("");
 			else
-				throw new Exception("El número de operadores no es correcto. Gracias.");
+				throw new Exception("");
 		} else {
 
 			Caracter e;
@@ -25,7 +25,7 @@ public class Calculadora {
 				Arbol ar = new Arbol(exp);
 				resultado = ar.Evaluar();
 			} else
-				throw new Exception("Verifique la expresión. Gracias.");
+				throw new Exception("");
 		}
 		return resultado;
 	}
