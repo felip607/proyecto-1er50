@@ -83,7 +83,7 @@ public class Regulador
              case '-' : sw = true; break;
              case '*' : sw = true; break;
              case '/' : sw = true; break;
-             case '^' : sw = true; break;
+
              
           }  
 	  return sw;

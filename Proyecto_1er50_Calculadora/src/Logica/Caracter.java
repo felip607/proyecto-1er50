@@ -111,7 +111,7 @@ public class Caracter
     }
     private boolean operador(char c)
     {
-       char operadores[] = {'+','-','*','/','^'};
+       char operadores[] = {'+','-','*','/'};
        boolean op = false;
        for(int i=0;((i<5) && (!op)); i++)
            if(operadores[i] == c)	    
@@ -131,7 +131,7 @@ public class Caracter
                  case '-' : r = 1; break;
                  case '*' : r = 2;
                  case '/' : r = 2; break;
-                 case '^' : r = 3;
+
               }
            }
            return r;
