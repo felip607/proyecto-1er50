@@ -113,7 +113,6 @@ public class Arbol
                  case '-' : res = vizq - vder;break;
                  case '*' : res = vizq * vder;break;
                  case '/' : res = vizq / vder;break;
-                 case '^' : res = Math.pow(vizq,vder);break;
                  default:; break;
               }
             }  
