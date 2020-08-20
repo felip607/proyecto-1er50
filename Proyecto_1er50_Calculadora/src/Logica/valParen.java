@@ -3,7 +3,7 @@ package Logica;
 
 public class valParen
 {
-    public String Scan(String Exp) throws Exception {
+    public String valpar(String Exp) throws Exception {
         String x = limpiarEspacios(Exp);
         if(okParentesis(x)) {
             if (okOperadores(x)){

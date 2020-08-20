@@ -9,13 +9,12 @@ public class calculator {
 	public double calcular(String Expre) throws Exception {
 		double resultado = 0;
 		String aux = Expre;
-		valParen scanner = new valParen();
-		aux = scanner.Scan(aux);
+		valParen valida = new valParen();
+		aux = valida.valpar(aux);
 		if (aux.equals("P") || aux.equals("O")) {
-			if (aux.equals("P"))
-				throw new Exception("");
-			else
-				throw new Exception("");
+
+			System.out.println("sale parenetesis");
+
 		} else {
 
 			Caracter e;
